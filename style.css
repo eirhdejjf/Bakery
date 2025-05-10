@@ -1,0 +1,207 @@
+/* Сброс и базовая стилизация */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #ffebf2, #f8e6f0);
+  background-attachment: fixed;
+}
+
+/* Хедер */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 160px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+header:hover {
+  box-shadow: 0 2px 30px rgba(0,0,0,0.2);
+}
+
+.header-background {
+  background-image: url('https://example.com/header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  inset: 0;
+  opacity: 0.8;
+  filter: brightness(1.1) saturate(1.3);
+  z-index: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+header:hover .header-background {
+  transform: scale(1.05);
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 20px 40px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  animation: slideInLeft 1.2s ease-out;
+}
+
+.cake-image {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cake-image:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.left-text h1 {
+  font-size: 36px;
+  color: #d94f4f;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 0, 0, 0.5);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.left-text p {
+  font-size: 16px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 8px 20px;
+  border-radius: 10px;
+  margin-top: 5px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Меню кнопки */
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #ff7da1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: #ff5b82;
+  transform: scale(1.05);
+}
+
+/* Новый элемент с интересным эффектом */
+.special-effect {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeInEffect 2s ease-in-out infinite;
+  font-size: 18px;
+  color: #d94f4f;
+}
+
+@keyframes fadeInEffect {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Видео секция */
+.video-section {
+  background: linear-gradient(to bottom, #ff91a4, #ff7da1);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  box-shadow: inset 0 10px 30px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  margin: 40px 20px;
+}
+
+.video-section h2 {
+  font-size: 40px;
+  animation: fadeIn 1s ease-in-out;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+}
+
+.video-container {
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+}
+
+.video-container:hover {
+  transform: scale(1.02);
+}
+
+.video-description {
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 15px 25px;
+  border-radius: 12px;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: fadeIn 1.4s ease-in-out;
+}
+
+/* Анимации */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
